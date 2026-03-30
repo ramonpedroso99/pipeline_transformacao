@@ -1,7 +1,8 @@
 import pandas as pd
+import logging
 
 def transform(df):
-    print("\n🔄 Iniciando transformação...")
+    logging.info("\n🔄 Iniciando transformação...")
 
     
     df = df[df["status"] == "concluido"]
@@ -13,7 +14,7 @@ def transform(df):
     
     df["tempo_atendimento"] = (df["fim"] - df["inicio"]).dt.total_seconds() / 60
 
-    print("✅ Transformação concluída:")
-    print(df)
+    logging.info("✅ Transformação concluída:")
+    logging.info(df)
 
     return df

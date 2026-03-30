@@ -1,4 +1,5 @@
 from database.connection import get_connection
+import logging
 
 async def load(df):
     conn = await get_connection()
@@ -7,6 +8,7 @@ async def load(df):
         await conn.execute("""
             INSERT INTO atendimentos (nome, status, inicio, fim, tempo_atendimento)
             VALUES ($1, $2, $3, $4, $5)
+            ON CONFLICT (nome, inicio, fim) DO NOTHING
         """,
         row["nome"],
         row["status"],
@@ -16,4 +18,4 @@ async def load(df):
         )
 
     await conn.close()
-    print("📦 Dados carregados no banco!")
+    logging.info("📦 Dados carregados no banco!")

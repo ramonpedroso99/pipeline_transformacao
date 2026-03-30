@@ -1,7 +1,8 @@
 import pandas as pd
+import logging
 
 def extract():
     df = pd.read_csv("data/dados.csv")
-    print("📥 Dados extraídos:")
-    print(df.head())
+    logging.info("📥 Dados extraídos:")
+    logging.info(df.head())
     return df
