@@ -18,3 +18,16 @@ Por fim, os dados tratados são carregados em um banco de dados PostgreSQL, gara
 
 ```bash
 CSV → Extract → Transform → Load → PostgreSQL
+
+## 📊 Exemplo da API
+
+GET /atendimentos
+
+```json
+[
+  {
+    "id": 1,
+    "nome": "João",
+    "tempo_atendimento": 120
+  }
+]
