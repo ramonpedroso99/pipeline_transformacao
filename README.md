@@ -19,6 +19,29 @@ Por fim, os dados tratados são carregados em um banco de dados PostgreSQL, gara
 ```bash
 CSV → Extract → Transform → Load → PostgreSQL
 
+🔄 O fluxo da aplicação:
+
+📥 Extração de dados de um CSV  
+🔄 Transformação com regras de negócio  
+⏱️ Cálculo de indicadores  
+📦 Persistência em PostgreSQL  
+🌐 Exposição via API REST com FastAPI  
+
+Além disso, implementei:
+
+✔️ Logs estruturados  
+✔️ Controle de duplicidade de dados  
+✔️ Arquitetura modular baseada em ETL  
+
+💡 Esse projeto reforça meu foco em:
+- Backend com Python  
+- Integrações entre sistemas  
+- Engenharia de dados  
+
+🛠️ Stack:
+Python | Pandas | FastAPI | PostgreSQL | AsyncIO 
+
+
 ## 📊 Exemplo da API
 
 GET /atendimentos
